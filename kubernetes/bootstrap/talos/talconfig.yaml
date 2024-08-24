@@ -24,7 +24,7 @@ cniConfig:
 nodes:
   - hostname: "escanor"
     ipAddress: "192.168.0.33"
-    installDisk: "/dev/sdb"
+    installDisk: "/dev/sda"
     talosImageURL: factory.talos.dev/installer/90c26b8a1bd9247fa5375260c6aebfe76155c5008519e04c4a4cccffd4c77a24
     controlPlane: true
     networkInterfaces:
@@ -41,7 +41,7 @@ nodes:
           ip: "192.168.0.36"
   - hostname: "bipboop"
     ipAddress: "192.168.0.34"
-    installDisk: "/dev/sdb"
+    installDisk: "/dev/sda"
     talosImageURL: factory.talos.dev/installer/c535365e0564d824d8ad4a71b812fd398c2ebaad16760e3148e39a13a4345396
     controlPlane: true
     networkInterfaces:
@@ -76,6 +76,13 @@ nodes:
 
 # Global patches
 patches:
+  - # Force nameserver
+    |-
+    machine:
+      network:
+        nameservers:
+          - 192.168.0.2
+          - 192.168.0.3
   - "@./patches/global/cluster-discovery.yaml"
   - "@./patches/global/containerd.yaml"
   - "@./patches/global/disable-search-domain.yaml"
