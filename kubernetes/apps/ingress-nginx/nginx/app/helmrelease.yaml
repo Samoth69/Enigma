@@ -21,4 +21,10 @@ spec:
     remediation:
       retries: 3
   values:
-    hostNetwork: true
+    controller:
+      hostNetwork: true
+      kind: DaemonSet
+      updateStrategy:
+        rollingUpdate:
+          maxUnavailable: 1
+        type: RollingUpdate
