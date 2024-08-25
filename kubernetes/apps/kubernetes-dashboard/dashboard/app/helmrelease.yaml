@@ -26,3 +26,12 @@ spec:
       containers:
         args:
           - '--disable-csrf-protection=true'
+    web:
+      scaling:
+        replicas: 1
+        args:
+          - '--disable-csrf-protection=true'
+    kong:
+      proxy:
+        http:
+          enabled: true
