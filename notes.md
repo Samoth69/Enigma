@@ -44,3 +44,10 @@ customization:
             - siderolabs/qemu-guest-agent
             - siderolabs/util-linux-tools
 ```
+
+# commandes utiles
+
+```bash
+flux reconcile source git home-kubernetes
+flux get all -A --status-selector ready=false
+```
