@@ -24,6 +24,13 @@ apiVersion: v1
 kind: Service
 metadata:
   name: httpd-service
+  labels:
+    name: httpd-service
+    topology: any
+    component: network-check
+    traffic: internal
+    quarantine: "false"
+    type: autocheck
 spec:
   selector:
     name: httpd-deployment
