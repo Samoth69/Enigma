@@ -26,9 +26,10 @@ metadata:
   name: httpd-service
 spec:
   selector:
-    app.kubernetes.io/name: httpd-deployment
+    name: httpd-deployment
   ports:
-    - protocol: TCP
+    - name: http
+      protocol: TCP
       port: 8080
       targetPort: 80
 ---
