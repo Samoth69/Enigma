@@ -48,6 +48,10 @@ customization:
 # commandes utiles
 
 ```bash
+# force update flux
 flux reconcile source git home-kubernetes
+# get flux objects status
 flux get all -A --status-selector ready=false
+# token for the dashboard
+kubectl -n kubernetes-dashboard create token admin-user
 ```
