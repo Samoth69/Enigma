@@ -17,9 +17,13 @@ spec:
   summary: "cluster addons"
   providerRef:
     name: discord-bot
+  exclusionList:
+    - "*Namespace/flux-system configured*"
   eventSeverity: info
   eventSources:
     - kind: GitRepository
       name: '*'
     - kind: Kustomization
+      name: '*'
+    - kind: HelmRelease
       name: '*'
