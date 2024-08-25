@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: httpd
-        image: httpd:2.4.62-alpine
+        image: nginx
         ports:
         - containerPort: 80
 ---
