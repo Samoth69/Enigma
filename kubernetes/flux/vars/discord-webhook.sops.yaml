@@ -4,7 +4,7 @@ metadata:
     name: discord-webhook
     namespace: flux-system
 stringData:
-    WEBHOOK: ENC[AES256_GCM,data:Sw1bq4UcgfWlEaujPvE83l3FuJ1+z6DeWkI4ljLqOJyCI7YXEtKc4Itu3zc2bUazs4LI8qgOEZuWiTZZbvCo6YXfU5oS8mziqiuN6ftme+W3GCkf6HK8aH/Xne/EKSEM04u2DJvmUesK6ueJD2d9jCSadmD7EjuSPQ==,iv:IzTPDTqy08aQ946L4SOTlSKPwGPZaZxI08Huk3UiWF8=,tag:NngjkC+N2JQsae4VOXmvmQ==,type:str]
+    address: ENC[AES256_GCM,data:4acZ30lhT6mKPk13ENftrx2IL9yqnpoxsSIwXGG99b/TVCgS1KCLK6i+qWMKOsBiqcmpctJVQz+pSTFu7JJPP2UZw82oyo5Ruq0pXzkXhLLcerBVl/mF+iXj0ChPknmjBsbeDt6JmDx7vB1Ok8OUSVOW60YkVUvodw==,iv:psBgCfs0y3R8L5/jtVkXS5JwiVskZhTyfZ2pLeaKmmw=,tag:eTeLjRTlNiaaJYhhgymQ+w==,type:str]
 sops:
     kms: []
     gcp_kms: []
@@ -20,8 +20,8 @@ sops:
             dlQ5dkpsVGlJa054bFh6Vnd0c09zRTgKFr9yjAFQ2y9+8TEjZCYKYumo68TbtMix
             nQzKop1TMl4oqdo2lG4Hh10mY7wkZfaayYFo4G13X6gaXu0emNbJcw==
             -----END AGE ENCRYPTED FILE-----
-    lastmodified: "2024-08-24T21:53:57Z"
-    mac: ENC[AES256_GCM,data:CEyCEN0MywKNlKGUUTuDWNmXOckhqQ7gAjao6s3/3jxjRT9OQZUuZpZvP/iKk2TLpX5klrbNQsOf0UeTyHrggWRmS0p62u96SKH2mAOVYd0tpRNSINhBABg01Xm48UTrjJtMkL5OVG2B7pHObIaBPks/mQSldvIldyu3KYB6Mgg=,iv:NQacP2vtvvMdSzB11QnftwA/z9RVBtL5Z+5qfnSviW0=,tag:DlWrxsOE4o0PgmuiS/Kpyg==,type:str]
+    lastmodified: "2024-08-25T14:49:35Z"
+    mac: ENC[AES256_GCM,data:f4hhg3fVvERsfyzi7cw91fflc3oFUHmsfIJGeXobvgupVd9ii1Y4CIGi6CucJz+GFz4Ji/Fl1cMTOkyBs/eKi/sJwEbfYywNCjZiaSP5Kww6Zn/RP9yCvmoXmXbG6r9UZr+uDXNvudoDfHiIbq1/tBVPFiEs5YKRvlIW48jNS6M=,iv:JJCsQPOtXVh6d9ixx0Z4Z4MHy4BtFXD+W4bl6+AOEFs=,tag:hn+ZahiwD6F6BhFHCYzIZg==,type:str]
     pgp: []
     encrypted_regex: ^(data|stringData)$
     version: 3.9.0
