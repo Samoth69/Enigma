@@ -27,6 +27,8 @@ metadata:
 spec:
   selector:
     app.kubernetes.io/name: httpd-deployment
+  externalTrafficPolicy: Cluster
+  internalTrafficPolicy: Cluster
   ports:
     - protocol: TCP
       port: 8080
