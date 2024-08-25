@@ -29,7 +29,7 @@ spec:
     app.kubernetes.io/name: httpd-deployment
   ports:
     - protocol: TCP
-      port: 80
+      port: 8080
       targetPort: 80
 ---
 apiVersion: networking.k8s.io/v1
@@ -48,4 +48,4 @@ spec:
           service:
             name: httpd-service
             port:
-              number: 80
+              number: 8080
