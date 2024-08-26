@@ -55,6 +55,9 @@ spec:
       containers:
       - name: alpine
         image: alpine
+        command:
+          - sleep
+          - infinity
 ---
 # apiVersion: networking.k8s.io/v1
 # kind: Ingress
