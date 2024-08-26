@@ -18,7 +18,7 @@ spec:
   providerRef:
     name: discord-bot
   exclusionList:
-    - "*Namespace/flux-system configured*"
+    - "Namespace/flux-system configured"
   eventSeverity: info
   eventSources:
     - kind: GitRepository
