@@ -39,7 +39,7 @@ localRedirectPolicy: true
 operator:
   replicas: 1
   rollOutPods: true
-# policyEnforcementMode: never
+policyEnforcementMode: never
 rollOutCiliumPods: true
 routingMode: native
 securityContext:
