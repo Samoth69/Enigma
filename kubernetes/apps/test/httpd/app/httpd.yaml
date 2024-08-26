@@ -46,15 +46,6 @@ metadata:
   labels:
     app: alpine
 spec:
-  affinity:
-    nodeAffinity:
-      requiredDuringSchedulingIgnoredDuringExecution:
-        nodeSelectorTerms:
-        - matchExpressions:
-          - key: hostname
-            operator: In
-            values:
-            - bipboop
   replicas: 1
   selector:
     matchLabels:
