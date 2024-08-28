@@ -23,7 +23,7 @@ tasks:
             talhelper gensecret > {{.TALHELPER_SECRET_FILE}}
             sops --encrypt --in-place {{.TALHELPER_SECRET_FILE}}
         fi
-      - talhelper genconfig --config-file {{.TALHELPER_CONFIG_FILE}} --secret-file {{.TALHELPER_SECRET_FILE}} --out-dir {{.TALHELPER_CLUSTER_DIR}}
+      - task: gen-config
       - talhelper gencommand apply --config-file {{.TALHELPER_CONFIG_FILE}} --out-dir {{.TALHELPER_CLUSTER_DIR}} --extra-flags="--insecure" | bash
       - until talhelper gencommand bootstrap --config-file {{.TALHELPER_CONFIG_FILE}} --out-dir {{.TALHELPER_CLUSTER_DIR}} | bash; do sleep 10; done
       - task: fetch-kubeconfig
@@ -36,6 +36,19 @@ tasks:
         sh: test -f {{.SOPS_CONFIG_FILE}}
       - msg: Missing Sops Age key file
         sh: test -f {{.AGE_FILE}}
+
+  gen-config:
+    desc: check and generate talos config
+    dir: "{{.KUBERNETES_DIR}}/bootstrap/talos"
+    cmds:
+      - talhelper validate talconfig
+      - talhelper genconfig --config-file {{.TALHELPER_CONFIG_FILE}} --secret-file {{.TALHELPER_SECRET_FILE}} --out-dir {{.TALHELPER_CLUSTER_DIR}}
+
+  apply-config:
+    desc: check and generate talos config
+    dir: "{{.KUBERNETES_DIR}}/bootstrap/talos"
+    cmds:
+      - until talhelper gencommand apply | bash; do sleep 10; done
 
   fetch-kubeconfig:
     desc: Fetch kubeconfig
