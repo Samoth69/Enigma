@@ -50,5 +50,8 @@ spec:
             enabled: false
       csi:
         node:
+          logLevel: debug
           initContainers:
             enabled: false
+      localpv-provisioner:
+        enabled: false
