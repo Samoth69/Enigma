@@ -21,6 +21,9 @@ spec:
     remediation:
       retries: 3
   values:
+    preUpgradeHook:
+      image:
+        registry: quay.io
     engines:
       local:
         lvm:
@@ -62,4 +65,4 @@ spec:
           volumeSnapshots:
             enabled: false
       image:
-        registry: quay.io/
+        registry: quay.io
