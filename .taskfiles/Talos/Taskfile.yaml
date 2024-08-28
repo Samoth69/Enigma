@@ -48,7 +48,7 @@ tasks:
     desc: check and generate talos config
     dir: "{{.KUBERNETES_DIR}}/bootstrap/talos"
     cmds:
-      - until talhelper gencommand apply | bash; do sleep 10; done
+      - talhelper gencommand apply | bash
 
   fetch-kubeconfig:
     desc: Fetch kubeconfig
