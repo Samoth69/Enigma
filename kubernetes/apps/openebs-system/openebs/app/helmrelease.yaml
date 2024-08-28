@@ -39,11 +39,6 @@ spec:
         create: false
       localpv:
         enabled: false
-        image:
-          registry: quay.io/
-      helperPod:
-        image:
-          registry: quay.io/
       serviceAccount:
         create: false
       hostpathClass:
