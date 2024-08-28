@@ -29,20 +29,37 @@ spec:
           enabled: false
       replicated:
         mayastor:
-          enabled: false
+          enabled: true
     openebs-crds:
       csi:
         volumeSnapshots:
           enabled: false
     localpv-provisioner:
+      rbac:
+        create: false
       localpv:
+        enabled: false
         image:
           registry: quay.io/
       helperPod:
         image:
           registry: quay.io/
+      serviceAccount:
+        create: false
       hostpathClass:
+        enabled: false
+      analytics:
+        enabled: false
+    zfs-localpv:
+      enabled: false
+    lvm-localpv:
+      enabled: false
+    mayastor:
+      enabled: true
+      crds:
         enabled: true
-        name: openebs-hostpath
-        isDefaultClass: false
-        basePath: /var/openebs/local
+        csi:
+          volumeSnapshots:
+            enabled: false
+      image:
+        registry: quay.io/
