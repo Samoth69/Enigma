@@ -66,3 +66,7 @@ spec:
             enabled: false
       image:
         registry: quay.io
+      nats:
+        nats:
+          image:
+            registry: quay.io
