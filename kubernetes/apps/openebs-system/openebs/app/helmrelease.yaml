@@ -48,3 +48,7 @@ spec:
         csi:
           volumeSnapshots:
             enabled: false
+      csi:
+        node:
+          initContainers:
+            enabled: false
