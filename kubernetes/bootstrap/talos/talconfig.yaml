@@ -42,11 +42,11 @@ nodes:
   - hostname: "bipboop"
     ipAddress: "192.168.0.34"
     installDisk: "/dev/sda"
-    talosImageURL: factory.talos.dev/installer/c535365e0564d824d8ad4a71b812fd398c2ebaad16760e3148e39a13a4345396
+    talosImageURL: factory.talos.dev/installer/a7bcadbc1b6d03c0e687be3a5d9789ef7113362a6a1a038653dfd16283a92b6b
     controlPlane: true
     networkInterfaces:
       - deviceSelector:
-          hardwareAddr: "60:be:b4:0c:10:64"
+          hardwareAddr: "bc:24:11:c7:87:fc"
         dhcp: false
         addresses:
           - "192.168.0.34/24"
@@ -59,7 +59,7 @@ nodes:
   - hostname: "akame"
     ipAddress: "192.168.0.35"
     installDisk: "/dev/sda"
-    talosImageURL: factory.talos.dev/installer/7eac8674861d3e8e2b4a3fdd65aa10f1718a08075b873980d841eeae1c3f7532
+    talosImageURL: factory.talos.dev/installer/a7bcadbc1b6d03c0e687be3a5d9789ef7113362a6a1a038653dfd16283a92b6b
     controlPlane: true
     networkInterfaces:
       - deviceSelector:
