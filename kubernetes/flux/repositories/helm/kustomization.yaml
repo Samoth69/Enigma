@@ -1,4 +1,5 @@
 ---
+# yaml-language-server: $schema=https://json.schemastore.org/kustomization
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 resources:
@@ -6,8 +7,10 @@ resources:
   - ./cilium.yaml
   - ./coredns.yaml
   - ./jetstack.yaml
+  - ./kubernetes-dashboard.yaml
   - ./metrics-server.yaml
   - ./postfinance.yaml
   - ./prometheus-community.yaml
+  - ./rook-ceph.yaml
   - ./spegel.yaml
   - ./stakater.yaml
