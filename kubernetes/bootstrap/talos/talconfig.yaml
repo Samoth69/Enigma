@@ -24,7 +24,7 @@ cniConfig:
 nodes:
   - hostname: "escanor"
     ipAddress: "192.168.0.33"
-    installDisk: "/dev/sdb"
+    installDisk: "/dev/sda"
     talosImageURL: factory.talos.dev/installer/f105b58d0db73b5b6f099685d2985e573bcb653ff29451c129dfffc3c29491f7
     controlPlane: true
     networkInterfaces:
@@ -41,7 +41,7 @@ nodes:
           ip: "192.168.0.36"
   - hostname: "bipboop"
     ipAddress: "192.168.0.34"
-    installDisk: "/dev/sdb"
+    installDisk: "/dev/sda"
     talosImageURL: factory.talos.dev/installer/f105b58d0db73b5b6f099685d2985e573bcb653ff29451c129dfffc3c29491f7
     controlPlane: true
     networkInterfaces:
