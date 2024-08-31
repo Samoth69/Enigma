@@ -4,3 +4,4 @@ kind: Kustomization
 resources:
   - ./namespace.yaml
   - ./httpd/ks.yaml
+  - ./alpine/ks.yaml
