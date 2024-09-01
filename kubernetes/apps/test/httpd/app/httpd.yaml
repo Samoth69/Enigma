@@ -15,10 +15,10 @@ spec:
         app: httpd
     spec:
       containers:
-      - name: httpd
-        image: httpd
-        ports:
-        - containerPort: 80
+        - name: httpd
+          image: httpd
+          ports:
+            - containerPort: 80
 ---
 apiVersion: v1
 kind: Service
@@ -39,14 +39,15 @@ metadata:
   name: httpd-ingress
 spec:
   ingressClassName: nginx
+  tls: {}
   rules:
-  - host: test.enigma.samoth.eu
-    http:
-      paths:
-      - path: /
-        pathType: Prefix
-        backend:
-          service:
-            name: httpd-service
-            port:
-              number: 80
+    - host: test.enigma.samoth.eu
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: httpd-service
+                port:
+                  number: 80
