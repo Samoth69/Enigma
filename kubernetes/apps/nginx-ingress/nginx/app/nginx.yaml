@@ -28,6 +28,7 @@ spec:
         enabled: false
       config:
         annotation-value-word-blocklist: "load_module,lua_package,_by_lua,location,root,proxy_pass,serviceaccount,{,},',\""
+        default-ssl-certificate: "nginx-ingress/enigma-tls-secret"
         # ipv6 is disabled cluster wide for now
         disable-ipv6: "true"
         use-http2: "true"
