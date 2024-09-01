@@ -7,7 +7,7 @@ spec:
   chart:
     spec:
       chart: ingress-nginx
-      version: v1.15.0
+      version: 4.11.2
       sourceRef:
         kind: HelmRepository
         name: ingress-nginx
@@ -26,3 +26,22 @@ spec:
       kind: DaemonSet
       service:
         enabled: false
+      config:
+        annotation-value-word-blocklist: "load_module,lua_package,_by_lua,location,root,proxy_pass,serviceaccount,{,},',\""
+        # ipv6 is disabled cluster wide for now
+        disable-ipv6: "true"
+        use-http2: "true"
+        use-geoip: "false"
+        ssl-protocols: TLSv1.3
+        ssl-redirect: "true"
+        force-ssl-redirect: "true"
+        denylist-source-range: "all"
+        whitelist-source-range:
+          # lan
+          - "192.168.0.0/24"
+          # cluster pod network
+          - "10.244.0.0/16"
+        # too many requests
+        limit-req-status-code: "429"
+        # i'm a teapot ;)
+        limit-conn-status-code: "418"
