@@ -36,11 +36,7 @@ spec:
         ssl-redirect: "true"
         force-ssl-redirect: "true"
         denylist-source-range: "all"
-        whitelist-source-range:
-          # lan
-          - "192.168.0.0/24"
-          # cluster pod network
-          - "10.244.0.0/16"
+        whitelist-source-range: "192.168.0.0/24,10.244.0.0/16"
         # too many requests
         limit-req-status-code: "429"
         # i'm a teapot ;)
