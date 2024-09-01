@@ -39,7 +39,9 @@ metadata:
   name: httpd-ingress
 spec:
   ingressClassName: nginx
-  tls: {}
+  tls:
+    - hosts:
+        - "*.enigma.samoth.eu"
   rules:
     - host: test.enigma.samoth.eu
       http:
