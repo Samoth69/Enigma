@@ -4,10 +4,10 @@ kind: Certificate
 metadata:
   name: enigma-cert
 spec:
-  secretName: enigma-tls-secret
+  secretName: enigma-prod-tls-secret
   issuerRef:
     kind: Issuer
-    name: letsencrypt-staging
+    name: letsencrypt-prod
   commonName: "enigma.samoth.eu"
   dnsNames:
     - "enigma.samoth.eu"
