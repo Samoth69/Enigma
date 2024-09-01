@@ -25,13 +25,19 @@ spec:
     api:
       containers:
         args:
-          - '--disable-csrf-protection=true'
+          - "--disable-csrf-protection=true"
     web:
       scaling:
         replicas: 1
         args:
-          - '--disable-csrf-protection=true'
+          - "--disable-csrf-protection=true"
     kong:
       proxy:
         http:
           enabled: true
+    app:
+      ingress:
+        enabled: true
+        hosts:
+          - kubernetes-dashboard.enigma.samoth.eu
+        ingressClassName: nginx
