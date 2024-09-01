@@ -20,6 +20,6 @@ spec:
             apiTokenSecretRef:
               name: cloudflare-api-token-secret
               key: api-token
-          selector:
-            dnsZones:
-              - "enigma.samoth.eu"
+        selector:
+          dnsZones:
+            - "enigma.samoth.eu"
