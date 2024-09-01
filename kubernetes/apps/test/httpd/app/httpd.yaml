@@ -33,20 +33,20 @@ spec:
       port: 80
       targetPort: 80
 ---
-# apiVersion: networking.k8s.io/v1
-# kind: Ingress
-# metadata:
-#   name: httpd-ingress
-# spec:
-#   ingressClassName: nginx
-#   rules:
-#   - host: test.enigma.samoth.eu
-#     http:
-#       paths:
-#       - path: /
-#         pathType: Prefix
-#         backend:
-#           service:
-#             name: httpd-service
-#             port:
-#               number: 8080
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: httpd-ingress
+spec:
+  ingressClassName: nginx
+  rules:
+  - host: test.enigma.samoth.eu
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: httpd-service
+            port:
+              number: 8080
