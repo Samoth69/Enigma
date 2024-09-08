@@ -47,9 +47,14 @@ flux get all -A --status-selector ready=false
 kubectl -n kubernetes-dashboard create token admin-user
 # to connect to primary database
 kubectl -n database port-forward "$(kubectl -n database get pods -l postgres-operator.crunchydata.com/role=master -o name)" 5432:5432
+# ceph
+kubectl -n rook-ceph get secret rook-ceph-dashboard-password -o jsonpath="{['data']['password']}" | base64 --decode && echo
 ```
 
 # todolist
 
-- keystore
+- uptime kuma
+- qbt mgmt
 - monitoring stack
+- movtrack
+- keystore
