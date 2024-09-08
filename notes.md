@@ -48,3 +48,8 @@ kubectl -n kubernetes-dashboard create token admin-user
 # to connect to primary database
 kubectl -n database port-forward "$(kubectl -n database get pods -l postgres-operator.crunchydata.com/role=master -o name)" 5432:5432
 ```
+
+# todolist
+
+- keystore
+- monitoring stack

@@ -26,5 +26,5 @@ spec:
         host: postgres-pgbouncer.database.svc
         username: harbor
         coreDatabase: harbor
-        existingSecret: mirror-postgres-pguser-harbor
+        existingSecret: postgres-pguser-harbor
         sslmode: require
