@@ -23,7 +23,7 @@ spec:
     database:
       type: external
       external:
-        host: postgres-ha.database.svc
+        host: postgres-primary.database.svc
         username: harbor
         coreDatabase: harbor
         existingSecret: postgres-pguser-harbor
