@@ -24,13 +24,28 @@ spec:
     # https://github.com/kubernetes/dashboard/issues/8829
     api:
       containers:
+        resources:
+          requests:
+            cpu: 10m
+            memory: 50Mi
         args:
           - "--disable-csrf-protection=true"
     web:
+      containers:
+        resources:
+          requests:
+            cpu: 10m
+            memory: 50Mi
       scaling:
         replicas: 1
         args:
           - "--disable-csrf-protection=true"
+    metricsScraper:
+      containers:
+        resources:
+          requests:
+            cpu: 10m
+            memory: 50Mi
     kong:
       proxy:
         http:
@@ -43,3 +58,9 @@ spec:
         ingressClassName: nginx
         issuer:
           scope: disabled
+    auth:
+      containers:
+        resources:
+          requests:
+            cpu: 10m
+            memory: 50Mi

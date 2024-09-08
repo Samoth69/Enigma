@@ -32,3 +32,10 @@ spec:
         coreDatabase: harbor
         existingSecret: postgres-pguser-harbor
         sslmode: require
+    trivy:
+      resources:
+        requests:
+          cpu: 10m
+          memory: 16m
+
+

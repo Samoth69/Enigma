@@ -42,3 +42,7 @@ spec:
         limit-req-status-code: "429"
         # i'm a teapot ;)
         limit-conn-status-code: "418"
+      resources:
+        requests:
+          cpu: 10m
+          memory: 64Mi
