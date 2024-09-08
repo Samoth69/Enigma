@@ -1,4 +1,14 @@
-# machines
+# computers
+
+## Short desc
+
+*All nodes are controllers*
+
+| Node    | Type      | CPU | RAM |
+|---------|-----------|-----|-----|
+| Akame   | VM        | 10  | 32  |
+| Bipboop | baremetal | 8   | 16  |
+| Escanor | baremetal | 8   | 16  |
 
 ## Escanor & Bipboop
 
@@ -26,7 +36,7 @@ customization:
             - siderolabs/util-linux-tools
 ```
 
-# commandes utiles
+# usefull commands
 
 ```bash
 # force update flux

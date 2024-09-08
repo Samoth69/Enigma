@@ -47,12 +47,37 @@ spec:
       global:
         repo1-s3-uri-style: path
         repo1-path: /pgbackrest/postgres-operator/hippo-s3/repo1
+        repo1-retention-full: "14"
+        repo1-retention-full-type: count
       repos:
         - name: repo1
           s3:
             bucket: crunchy-postgres-backups
             endpoint: 192.168.0.22:9000
             region: us-east-1
+          schedules:
+            full: "0 1 * * 0" # Sunday at 01:00
+            differential: "0 1 * * 1-6" # Mon-Sat at 01:00
+
+  proxy:
+    pgBouncer:
+      port: 5432
+      replicas: *replica
+      metadata:
+        labels:
+          app.kubernetes.io/name: crunchy-postgres-pgbouncer
+      config:
+        global:
+          pool_mode: "transaction" # pgBouncer is set to transaction for Authentik. Grafana requires session https://github.com/grafana/grafana/issues/74260#issuecomment-1702795311. Everything else is happy with transaction
+          client_tls_sslmode: require
+      topologySpreadConstraints:
+        - maxSkew: 1
+          topologyKey: "kubernetes.io/hostname"
+          whenUnsatisfiable: "DoNotSchedule"
+          labelSelector:
+            matchLabels:
+              postgres-operator.crunchydata.com/cluster: *name
+              postgres-operator.crunchydata.com/role: "pgbouncer"
 
   users:
     # Superuser
