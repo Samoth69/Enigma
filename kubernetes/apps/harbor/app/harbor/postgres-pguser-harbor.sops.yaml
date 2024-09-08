@@ -2,8 +2,9 @@ apiVersion: v1
 kind: Secret
 metadata:
     name: postgres-pguser-harbor
-data:
-    password: ENC[AES256_GCM,data:FpRiUHskVUcYvp7c/xLofugy3wGfpr+R,iv:C95ygt8f279GqiWFa0Obpaczugq9M0IjkO0kh4MbQ7E=,tag:AZH7vp4fRXVGyCLDuf0oNg==,type:str]
+type: Opaque
+stringData:
+    password: ENC[AES256_GCM,data:mgZqgvFeMz6NuWc5X47hITg+PSMSll4o,iv:G6E+N6OZNqcKWkQF1zePncGTlSZsgHQRvxr1+3HupR0=,tag:b76jsFOYmvCSqEv9ELD3cA==,type:str]
 sops:
     kms: []
     gcp_kms: []
@@ -19,8 +20,8 @@ sops:
             aWQvMWNZMUZoQUxlSGlCbW0zbUliSkEK1UXCjlbhYlXC++3xEZYZdoxKGPaLePhK
             v9z6EiqJXs/m2FY8Y8hRYwuyf53WwlxEFUgBQ7PXq2KUq0vUZ7mdzw==
             -----END AGE ENCRYPTED FILE-----
-    lastmodified: "2024-09-08T13:39:57Z"
-    mac: ENC[AES256_GCM,data:t3nS/lxxuyqLySD49hofgAgYl3Hp+P9yrUXa9zQlNWjc87pmtpXnfAwMwXOnHUHu403P4iOzGqPzvx75xGQnFygQXNwC9sKuGHKV4HHEJ0TMVdqall191suC82RXmTYRhKb2HZ+SdRK0Z9ZdbMgmnc4lm8E5pw5pV0wz0rB4BEE=,iv:PUaQFrRYcru23LMpipdCrXAfJNRW8hJVBR3FPTFpBy0=,tag:innjh3f7FsosREAXqjgjAA==,type:str]
+    lastmodified: "2024-09-08T13:47:13Z"
+    mac: ENC[AES256_GCM,data:z07VLXr2UQqX+KWoZE9QErxdiGxlKP+FU4ZMuCNoQ5uNnSHUayYeuuUWK8+ulNDZa+v7lamgS89uk5oGZGyfNVhFIQzVFY5t7fyUYV4ibd8Owv/ZZiIAXz39NFgFBnicgyxVJy9hpzZUtepJLDDA+h06gBXNKKz2oJAhAnLAgJc=,iv:XWnvtN4LX/PX/TNW0HQAXKtxKZ/T8PEvUjSIFpekOy8=,tag:vPkI8ljsVoM/jueoO9JxkA==,type:str]
     pgp: []
     encrypted_regex: ^(data|stringData)$
     version: 3.9.0
