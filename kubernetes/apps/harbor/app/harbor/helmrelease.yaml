@@ -21,6 +21,9 @@ spec:
         hosts:
           core: harbor.enigma.samoth.eu
         className: nginx
+      # we do not want harbor internal cert
+      tls:
+        enabled: false
     database:
       type: external
       external:
