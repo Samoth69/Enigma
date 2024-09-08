@@ -1,0 +1,66 @@
+---
+# yaml-language-server: $schema=https://raw.githubusercontent.com/datreeio/CRDs-catalog/main/postgres-operator.crunchydata.com/postgrescluster_v1beta1.json
+apiVersion: postgres-operator.crunchydata.com/v1beta1
+kind: PostgresCluster
+metadata:
+  name: &name postgres
+spec:
+  postgresVersion: 16
+
+  patroni: # turn on sync writes to at least 1 other replica
+    dynamicConfiguration:
+      synchronous_mode: true
+      postgresql:
+        max_wal_size: 5GB
+        synchronous_commit: "on"
+        pg_hba:
+          - hostnossl all all 10.244.0.0/16 md5 # Needed because dbman does not support SSL yet
+          - hostssl all all all md5
+
+  instances:
+    - name: postgres
+      metadata:
+        labels:
+          app.kubernetes.io/name: crunchy-postgres
+      replicas: &replica 3
+      dataVolumeClaimSpec:
+        storageClassName: ceph-block
+        accessModes:
+          - ReadWriteOnce
+        resources:
+          requests:
+            storage: 20Gi
+      topologySpreadConstraints:
+        - maxSkew: 1
+          topologyKey: "kubernetes.io/hostname"
+          whenUnsatisfiable: "DoNotSchedule"
+          labelSelector:
+            matchLabels:
+              postgres-operator.crunchydata.com/cluster: *name
+              postgres-operator.crunchydata.com/data: postgres
+
+  backups:
+    pgbackrest:
+      configuration:
+        - secret:
+            name: repo1-s3-keys
+      global:
+        repo1-s3-uri-style: path
+        repo1-path: /pgbackrest/postgres-operator/hippo-s3/repo1
+      repos:
+        - name: repo1
+          s3:
+            bucket: crunchy-postgres-backups
+            endpoint: 192.168.0.22:9000
+            region: us-east-1
+
+  users:
+    # Superuser
+    - name: postgres
+      databases:
+        - postgres
+      options: "SUPERUSER"
+      password:
+        type: AlphaNumeric
+    # Applications
+    # TODO

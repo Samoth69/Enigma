@@ -1,0 +1,28 @@
+apiVersion: v1
+kind: Secret
+metadata:
+    name: repo1-s3-keys
+type: Opaque
+stringData:
+    repo1-s3-key: ENC[AES256_GCM,data:qLZ+HgWrF/85DiWEE5mONifvUxpldaQZGrluaLcMs2M=,iv:ej+dNWWV0goW1OxhCDUtLUyv6HgzW3lNkMeKqYpVW/8=,tag:V7JdrnR2RVa7VxLMVagutA==,type:str]
+    repo1-s3-key-secret: ENC[AES256_GCM,data:AV2BVgwAJHzyUkX+ZKURKrYpjrXFM7XQD23qnHrbREs=,iv:/kD4hc6n/tSFrL6hG6O5jMu0HP+ADr1t6WyJnEFS0vs=,tag:TxG0LegNE5nrBhdFDtwGPQ==,type:str]
+sops:
+    kms: []
+    gcp_kms: []
+    azure_kv: []
+    hc_vault: []
+    age:
+        - recipient: age1tjsw23yzl9m8gc8zsexypje8vfqcrjmvmd4j6catcea73qglv32qeh6n27
+          enc: |
+            -----BEGIN AGE ENCRYPTED FILE-----
+            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBxQ3VmNnBXS3VmdGF0dXly
+            eWdWcFJZT0Vqc0VOTmRrUEdkTTcvWTdBQWxFCnVqSFpCd3Nvc3Zjd05tVUFleXdB
+            UFJMZUZhWTQvd29wRExRMXpGc2ZoWEEKLS0tIE9PemtVb0V4TElHUkpZM01oMVNU
+            VFhmZ1lvYXJiNm1EOXJzc3JVZzNZOFEKZG29EIq92J/DJzkL+PJPdO5ls2/mK10H
+            3PVdYXtIckfU1UqRYFXEF9yV0/v3Wch0r/52hQtHvq6GReXiA7T/Iw==
+            -----END AGE ENCRYPTED FILE-----
+    lastmodified: "2024-09-08T08:55:52Z"
+    mac: ENC[AES256_GCM,data:efaKgD0qwxEOHdMzv69/4umGsa0/EfdFmuAw1Tp80nCYREZjlWR4ZL5ypFoYjEqcvcO91pIa3yFOfKYQh4E1dJh31DCyD+0OjggPsvR51qrfv9oiG7oNyA2ipgfmapL4suTbqMMSbKuxtUyWm7hv9RMUP7XtU4RYAr2eBsDEevw=,iv:XsgYGqrP8L+KjrLiy3FV7qYejrFuUuxcCzfE0I1cpzY=,tag:YfRvw9jtLUyKF0e6yFVpXQ==,type:str]
+    pgp: []
+    encrypted_regex: ^(data|stringData)$
+    version: 3.9.0
