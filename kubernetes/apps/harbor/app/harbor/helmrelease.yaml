@@ -20,6 +20,7 @@ spec:
       ingress:
         hosts:
           core: harbor.enigma.samoth.eu
+        className: nginx
     database:
       type: external
       external:
