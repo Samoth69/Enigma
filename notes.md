@@ -35,4 +35,6 @@ flux reconcile source git home-kubernetes
 flux get all -A --status-selector ready=false
 # token for the dashboard
 kubectl -n kubernetes-dashboard create token admin-user
+# to connect to primary database
+kubectl -n database port-forward "$(kubectl -n database get pods -l postgres-operator.crunchydata.com/role=master -o name)" 5432:5432
 ```
