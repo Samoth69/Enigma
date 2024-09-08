@@ -20,7 +20,6 @@ spec:
   upgrade:
     crds: CreateReplace
   values:
-    singleNamespace: false
-    # TODO passer à false
-    debug: true
+    singleNamespace: true
+    debug: false
     disable_check_for_upgrades: true
