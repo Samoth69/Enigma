@@ -43,7 +43,7 @@ spec:
     pgbackrest:
       configuration:
         - secret:
-            name: repo1-s3-keys
+            name: crunchy-postgres-secret
       global:
         repo1-s3-uri-style: path
         repo1-path: /pgbackrest/postgres-operator/hippo-s3/repo1
