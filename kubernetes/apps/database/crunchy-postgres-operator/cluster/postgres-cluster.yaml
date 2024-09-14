@@ -41,6 +41,10 @@ spec:
 
   backups:
     pgbackrest:
+      manual:
+        repoName: repo1
+        options:
+         - --type=full
       configuration:
         - secret:
             name: crunchy-postgres-secret
