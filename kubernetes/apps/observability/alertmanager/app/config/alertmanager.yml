@@ -2,7 +2,7 @@
 receivers:
   - name: "null"
   - name: "discord"
-    slack_config:
+    slack_configs:
       - api_url_file: /etc/secrets/discord_webhook
         # Discord doesn't care about channel property : https://discord.com/developers/docs/resources/webhook#execute-slackcompatible-webhook
         channel: placeholder
