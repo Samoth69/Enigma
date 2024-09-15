@@ -41,11 +41,11 @@ spec:
                 containerPort: 9093
             probes:
               liveness:
-                enabled: false
+                enabled: true
               readiness:
-                enabled: false
+                enabled: true
               startup:
-                enabled: false
+                enabled: true
                 spec:
                   failureThreshold: 30
                   periodSeconds: 5
