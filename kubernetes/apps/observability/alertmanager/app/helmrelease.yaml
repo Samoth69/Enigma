@@ -36,7 +36,10 @@ spec:
             image:
               repository: quay.io/prometheus/alertmanager
               tag: v0.27.0
-            command: --log.level=debug
+            command:
+              - --log.level=debug
+              - --config.file=/etc/alertmanager/alertmanager.yml
+              - --storage.path=/alertmanager
             ports:
               - name: http
                 containerPort: 9093
