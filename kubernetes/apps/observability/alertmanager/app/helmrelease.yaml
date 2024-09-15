@@ -31,16 +31,22 @@ spec:
               globalMounts:
                 - path: /alertmanager
 
+        initContainers:
+          volumeprep:
+            image:
+              repository: busybox
+              tag: 1.36.1
+            command:
+              - chown
+              - -R
+              - nobody:nobody
+              - /alertmanager
+
         containers:
           alertmanager:
             image:
               repository: quay.io/prometheus/alertmanager
               tag: v0.27.0
-            command:
-              - /bin/alertmanager
-              - --log.level=debug
-              - --config.file=/etc/alertmanager/alertmanager.yml
-              - --storage.path=/alertmanager
             ports:
               - name: http
                 containerPort: 9093
