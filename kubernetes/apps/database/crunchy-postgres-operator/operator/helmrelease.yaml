@@ -23,3 +23,6 @@ spec:
     singleNamespace: true
     debug: false
     disable_check_for_upgrades: true
+    install:
+      clusterLabels:
+        app.kubernetes.io/name: pgo

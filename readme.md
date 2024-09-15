@@ -57,8 +57,12 @@ kubectl -n rook-ceph get secret rook-ceph-dashboard-password -o jsonpath="{['dat
 
 # todolist
 
+- monitoring stack
+  - notification should be ok (not tested, need critical warning for that)
+  - ceph/rook ok
+  - database not working
+  - todo : grafana
 - uptime kuma
 - qbt mgmt
-- monitoring stack
 - movtrack
 - keystore

@@ -36,4 +36,5 @@ spec:
     name: home-kubernetes
   wait: true
   dependsOn:
+    - name: rook-ceph-cluster
     - name: crunchy-postgres-operator
