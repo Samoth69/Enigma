@@ -5,3 +5,4 @@ kind: Kustomization
 resources:
   - ./crunchy-postgres-secret.sops.yaml
   - ./postgres-cluster.yaml
+  - ./podmonitor.yaml
