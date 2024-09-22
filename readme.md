@@ -63,6 +63,5 @@ kubectl -n rook-ceph get secret rook-ceph-dashboard-password -o jsonpath="{['dat
   - database not working
   - todo : grafana
 - uptime kuma
-- qbt mgmt
 - movtrack
 - keystore
