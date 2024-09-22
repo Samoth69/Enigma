@@ -16,6 +16,7 @@ spec:
         namespace: flux-system
       interval: 5m
   values:
+    externalURL: https://harbor.enigma.samoth.eu
     expose:
       ingress:
         hosts:
