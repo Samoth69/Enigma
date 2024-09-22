@@ -107,8 +107,8 @@ spec:
         - harbor
       password:
         type: AlphaNumeric
-    - name: movtrack7
+    - name: movtrack6
       databases:
-        - movtrack7
+        - movtrack6
       password:
         type: AlphaNumeric
