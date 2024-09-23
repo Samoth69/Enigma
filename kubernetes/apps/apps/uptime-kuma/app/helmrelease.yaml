@@ -64,7 +64,7 @@ spec:
               - chown
               - -R
               - 1000:1000
-              - /alertmanager
+              - /app/data
 
     service:
       app:
