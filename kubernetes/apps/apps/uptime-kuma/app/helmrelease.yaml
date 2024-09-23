@@ -64,14 +64,14 @@ spec:
             protocol: TCP
 
     ingress:
-      uptime-kuma:
+      app:
         enabled: true
         hosts:
           - host: uptime-kuma.enigma.samoth.eu
             paths:
               - path: /
                 service:
-                  identifier: uptime-kuma
+                  identifier: app
                   port: http
 
     persistence:
