@@ -55,6 +55,17 @@ spec:
             securityContext:
               readOnlyRootFilesystem: true
 
+        initContainers:
+          volumeprep:
+            image:
+              repository: busybox
+              tag: 1.36.1
+            command:
+              - chown
+              - -R
+              - 1000:1000
+              - /alertmanager
+
     service:
       app:
         controller: uptime-kuma
