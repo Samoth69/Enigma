@@ -59,6 +59,7 @@ spec:
     ingress:
       app:
         enabled: true
+        className: nginx
         hosts:
           - host: uptime-kuma.enigma.samoth.eu
             paths:
