@@ -47,21 +47,6 @@ spec:
                 enabled: true
             securityContext:
               readOnlyRootFilesystem: true
-              runAsUser: 1000
-              runAsGroup: 1000
-              fsGroup: 1000
-              fsGroupChangePolicy: "OnRootMismatch"
-
-        initContainers:
-          volumeprep:
-            image:
-              repository: busybox
-              tag: 1.36.1
-            command:
-              - chown
-              - -R
-              - 1000:1000
-              - /app/data
 
     service:
       app:
