@@ -33,6 +33,8 @@ spec:
         coreDatabase: harbor
         existingSecret: postgres-pguser-harbor
         sslmode: require
+    serviceMonitor:
+      enabled: true
     trivy:
       resources:
         requests:

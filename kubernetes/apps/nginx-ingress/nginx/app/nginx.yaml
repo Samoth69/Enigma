@@ -42,6 +42,13 @@ spec:
         limit-req-status-code: "429"
         # i'm a teapot ;)
         limit-conn-status-code: "418"
+      metrics:
+        enabled: true
+        serviceMonitor:
+          enabled: true
+          namespace: nginx-ingress
+          namespaceSelector:
+            any: true
       resources:
         requests:
           cpu: 10m
