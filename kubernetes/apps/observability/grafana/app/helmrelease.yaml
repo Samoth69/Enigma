@@ -141,6 +141,11 @@ spec:
           gnetId: 15038
           revision: 3
           datasource: Prometheus
+        harbor:
+          # renovate: depName="Harbor"
+          gnetId: 16003
+          revision: 2
+          datasource: Prometheus
         prometheus:
           # renovate: depName="Prometheus"
           gnetId: 19105
