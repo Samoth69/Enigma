@@ -115,7 +115,7 @@ spec:
 
       prometheusSpec:
         alertingEndpoints:
-          - namespace: monitoring
+          - namespace: observability
             name: alertmanager
             port: 9093
             apiVersion: v2

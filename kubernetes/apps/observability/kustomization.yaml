@@ -6,6 +6,7 @@ resources:
   - ./namespace.yaml
   - ./alertmanager/ks.yaml
   - ./prometheus-operator-crds/ks.yaml
+  - ./kube-state-metrics/ks.yaml
   - ./kube-prometheus-stack/ks.yaml
   - ./node-exporter/ks.yaml
   - ./grafana/ks.yaml
