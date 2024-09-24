@@ -83,6 +83,54 @@ spec:
             editable: true
             options:
               path: /var/lib/grafana/dashboards/default
+          - name: ceph
+            orgId: 1
+            folder: Ceph
+            type: file
+            disableDeletion: false
+            editable: true
+            options:
+              path: /var/lib/grafana/dashboards/ceph
+          - name: flux
+            orgId: 1
+            folder: Flux
+            type: file
+            disableDeletion: false
+            editable: true
+            options:
+              path: /var/lib/grafana/dashboards/flux
+          - name: hardware
+            orgId: 1
+            folder: Hardware
+            type: file
+            disableDeletion: false
+            editable: true
+            options:
+              path: /var/lib/grafana/dashboards/hardware
+          - name: kubernetes
+            orgId: 1
+            folder: Kubernetes
+            type: file
+            disableDeletion: false
+            editable: true
+            options:
+              path: /var/lib/grafana/dashboards/kubernetes
+          - name: nginx
+            orgId: 1
+            folder: Nginx
+            type: file
+            disableDeletion: false
+            editable: true
+            options:
+              path: /var/lib/grafana/dashboards/nginx
+          - name: postgres
+            orgId: 1
+            folder: Postgres
+            type: file
+            disableDeletion: false
+            editable: true
+            options:
+              path: /var/lib/grafana/dashboards/postgres
     dashboards:
       default:
         cert-manager:
@@ -148,7 +196,7 @@ spec:
             - name: DS_PROMETHEUS
               value: Prometheus
 
-      kube:
+      kubernetes:
         kubernetes-api-server:
           # renovate: depName="Kubernetes / System / API Server"
           gnetId: 15761
