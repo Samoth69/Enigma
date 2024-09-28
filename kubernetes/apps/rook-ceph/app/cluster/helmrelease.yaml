@@ -28,6 +28,8 @@ spec:
       enabled: true
       createPrometheusRules: true
     cephClusterSpec:
+      # TODO: remove
+      cephClusterSpec.continueUpgradeAfterChecksEvenIfNotHealthy: true
       crashCollector:
         disable: false
       dashboard:
