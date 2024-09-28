@@ -23,13 +23,11 @@ spec:
       retries: 3
   values:
     toolbox:
-      enabled: true
+      enabled: false
     monitoring:
       enabled: true
       createPrometheusRules: true
     cephClusterSpec:
-      # TODO: remove
-      continueUpgradeAfterChecksEvenIfNotHealthy: true
       crashCollector:
         disable: false
       dashboard:
