@@ -39,14 +39,14 @@ nodes:
         mtu: 1500
         vip:
           ip: "192.168.0.36"
-  - hostname: "bipboop"
+  - hostname: "felix"
     ipAddress: "192.168.0.34"
-    installDisk: "/dev/sda"
-    talosImageURL: factory.talos.dev/installer/f105b58d0db73b5b6f099685d2985e573bcb653ff29451c129dfffc3c29491f7
+    installDisk: "/dev/sdb"
+    talosImageURL: factory.talos.dev/installer/cf623aa60e080e46447581427e9f7b6440cbc6b862a5d298eca3809163684afe
     controlPlane: true
     networkInterfaces:
       - deviceSelector:
-          hardwareAddr: "60:be:b4:0c:10:64"
+          hardwareAddr: "58:47:ca:73:c9:84"
         dhcp: false
         addresses:
           - "192.168.0.34/24"
