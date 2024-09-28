@@ -21,6 +21,7 @@ spec:
     remediation:
       retries: 3
   values:
+    priorityClassName: rook-priority-class
     crds:
       enabled: true
     csi:
