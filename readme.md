@@ -11,10 +11,23 @@ Welcome to my home ops Kubernetes cluster, this repository is based on [onedr0p/
 | Node    | Type      | CPU | RAM |
 |---------|-----------|-----|-----|
 | Akame   | VM        | 10  | 32  |
-| Bipboop | baremetal | 4   | 16  |
 | Escanor | baremetal | 4   | 16  |
+| Felix   | baremetal | 16  | 64  |
 
-## Escanor & Bipboop
+
+## Akame
+
+schematic Id: a7bcadbc1b6d03c0e687be3a5d9789ef7113362a6a1a038653dfd16283a92b6b
+
+```yaml
+customization:
+    systemExtensions:
+        officialExtensions:
+            - siderolabs/qemu-guest-agent
+            - siderolabs/util-linux-tools
+```
+
+## Escanor
 
 schematic Id: f105b58d0db73b5b6f099685d2985e573bcb653ff29451c129dfffc3c29491f7
 
@@ -28,15 +41,17 @@ customization:
             - siderolabs/util-linux-tools
 ```
 
-## Akame
+## Felix
 
-schematic Id: a7bcadbc1b6d03c0e687be3a5d9789ef7113362a6a1a038653dfd16283a92b6b
+schematic Id: cf623aa60e080e46447581427e9f7b6440cbc6b862a5d298eca3809163684afe
 
 ```yaml
 customization:
     systemExtensions:
         officialExtensions:
-            - siderolabs/qemu-guest-agent
+            - siderolabs/amd-ucode
+            - siderolabs/amdgpu-firmware
+            - siderolabs/realtek-firmware
             - siderolabs/util-linux-tools
 ```
 
