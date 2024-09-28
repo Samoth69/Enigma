@@ -76,7 +76,7 @@ spec:
           - name: "akame"
             devices:
               - name: "/dev/disk/by-id/nvme-Force_MP510_19378239000128950040"
-          - name: "bipboop"
+          - name: "felix"
             devices:
               - name: "/dev/disk/by-id/nvme-CT2000P2SSD8_2237E6656567"
           - name: "escanor"
